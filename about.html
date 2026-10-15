@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — ShivRam | Web Developer for Small & Local Businesses</title>
+    <meta name="description"
+        content="ShivRam builds modern, fast, responsive websites for small and local businesses — cafés, salons, service shops, and more.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary">
+            <a href="#home" class="nav-logo">ShivRam<span class="nav-logo-dot">.</span></a>
+
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu"
+                aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!--================= ABOUT ================= -->
+        <section class="about" id="about">
+            <div class="container about-inner">
+                <div class="about-image">
+                    <div class="avatar-frame">
+                        <img src="images/profile.png" alt="Portrait of ShivRam, web developer"
+                            onerror="this.parentElement.classList.add('avatar-fallback')">
+                        <div class="avatar-placeholder" aria-hidden="true">RV</div>
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <p class="eyebrow">About</p>
+                    <h2 class="section-title">I build the web presence small businesses actually need.</h2>
+                    <p>
+                        Most of my work is for owner-run businesses — cafés, salons, repair
+                        shops, and local services — who need a website that looks professional,
+                        loads quickly, and is simple for their customers to use on a phone.
+                    </p>
+                    <p>
+                        I focus on the fundamentals: clear structure, readable typography,
+                        honest content, and layouts that hold up on any screen size. Every
+                        project starts with understanding the business before a single line
+                        of code gets written.
+                    </p>
+                    <p>
+                        My approach is deliberately straightforward — semantic HTML, clean
+                        CSS, and JavaScript that's used only where it genuinely improves the
+                        experience. No unnecessary frameworks, no bloated page weight.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="#home" class="nav-logo">ShivRam<span class="nav-logo-dot">.</span></a>
+                <p>Web developer building modern websites for small and local businesses.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="skills.html">Skills</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="footer-meta">
+                <a href="https://github.com/shivram-devloper" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:shivram.dev.in@gmail.com">shivram.dev.in@gmail.com</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="currentYear"></span> ShivRam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

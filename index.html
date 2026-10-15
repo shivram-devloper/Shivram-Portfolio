@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShivRam — Web Developer for Small & Local Businesses</title>
+  <meta name="description" content="ShivRam builds modern, fast, responsive websites for small and local businesses — cafés, salons, service shops, and more.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary">
+      <a href="#home" class="nav-logo">ShivRam<span class="nav-logo-dot">.</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Web developer</p>
+          <h1 class="hero-title">Websites built with care, for businesses that run on trust.</h1>
+          <p class="hero-desc">
+            I'm ShivRam, an independent web developer. I design and build clean,
+            modern websites for small and local businesses — the kind of sites that
+            load fast, work on every phone, and make it easy for customers to find
+            what they need.
+          </p>
+          <div class="hero-actions">
+            <a href="projects.html" class="btn btn-primary">View My Work</a>
+            <a href="contact.html" class="btn btn-ghost">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="browser-mock">
+            <div class="browser-bar">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <div class="browser-url">yourbusiness.com</div>
+            </div>
+            <div class="browser-body">
+              <div class="skeleton-nav">
+                <span class="skeleton-chip"></span>
+                <span class="skeleton-line skeleton-line--s"></span>
+                <span class="skeleton-line skeleton-line--s"></span>
+                <span class="skeleton-line skeleton-line--s"></span>
+              </div>
+              <div class="skeleton-hero">
+                <span class="skeleton-line skeleton-line--lg"></span>
+                <span class="skeleton-line skeleton-line--md"></span>
+                <span class="skeleton-btn"></span>
+              </div>
+              <div class="skeleton-cards">
+                <span class="skeleton-card"></span>
+                <span class="skeleton-card"></span>
+                <span class="skeleton-card"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT =================
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="about-image">
+          <div class="avatar-frame">
+            <img src="images/profile.png" alt="Portrait of ShivRam, web developer" onerror="this.parentElement.classList.add('avatar-fallback')">
+            <div class="avatar-placeholder" aria-hidden="true">RV</div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">I build the web presence small businesses actually need.</h2>
+          <p>
+            Most of my work is for owner-run businesses — cafés, salons, repair
+            shops, and local services — who need a website that looks professional,
+            loads quickly, and is simple for their customers to use on a phone.
+          </p>
+          <p>
+            I focus on the fundamentals: clear structure, readable typography,
+            honest content, and layouts that hold up on any screen size. Every
+            project starts with understanding the business before a single line
+            of code gets written.
+          </p>
+          <p>
+            My approach is deliberately straightforward — semantic HTML, clean
+            CSS, and JavaScript that's used only where it genuinely improves the
+            experience. No unnecessary frameworks, no bloated page weight.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ================= SERVICES =================
+    <section class="services" id="services">
+      <div class="container">
+        <p class="eyebrow">Services</p>
+        <h2 class="section-title">What I can build for you</h2>
+
+        <div class="services-list">
+          <article class="service-row">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="26" rx="3"/><path d="M6 16h36"/><path d="M14 34v6h20v-6"/></svg>
+            </div>
+            <div class="service-text">
+              <h3>Business Websites</h3>
+              <p>A complete, professional website for your business — home, about, services, and contact pages built around how your customers actually search and browse.</p>
+            </div>
+          </article>
+
+          <article class="service-row">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="10" y="4" width="28" height="40" rx="4"/><path d="M18 12h12"/><path d="M20 36h8"/></svg>
+            </div>
+            <div class="service-text">
+              <h3>Landing Pages</h3>
+              <p>A focused, single-page site built around one goal — a promotion, an event, or a new product — designed to convert visitors quickly.</p>
+            </div>
+          </article>
+
+          <article class="service-row">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="24" rx="2"/><rect x="16" y="38" width="16" height="4" rx="1"/></svg>
+            </div>
+            <div class="service-text">
+              <h3>Responsive Web Design</h3>
+              <p>Layouts that are built mobile-first and tested across phones, tablets, and desktops, so your site looks right wherever it's opened.</p>
+            </div>
+          </article>
+
+          <article class="service-row">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M8 40l6-18L34 2l6 6-20 20-18 6z"/><path d="M28 8l6 6"/></svg>
+            </div>
+            <div class="service-text">
+              <h3>Website Redesign</h3>
+              <p>A rebuild of an outdated or underperforming site — keeping what works, replacing what doesn't, and modernizing the design and structure.</p>
+            </div>
+          </article>
+
+          <article class="service-row">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="6"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.5 9.5l4.2 4.2M34.3 34.3l4.2 4.2M9.5 38.5l4.2-4.2M34.3 13.7l4.2-4.2"/></svg>
+            </div>
+            <div class="service-text">
+              <h3>Website Maintenance</h3>
+              <p>Ongoing updates, content changes, and fixes after launch, so your site stays accurate and running smoothly.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ================= PROJECTS =================
+    <section class="projects" id="projects">
+      <div class="container">
+        <p class="eyebrow">Projects</p>
+        <h2 class="section-title">Demo work</h2>
+        <p class="section-lead">
+          These are self-directed demo projects built to show how I structure and
+          design a site for a specific kind of local business — not work for real clients.
+        </p>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <span class="demo-badge">Demo Project</span>
+            <div class="project-media">
+              <img src="images/cafe.jpeg" alt="Screenshot of a demo café website homepage with a warm, inviting layout">
+            </div>
+            <div class="project-body">
+              <h3>Café Website</h3>
+              <p>A warm, image-led homepage for a neighborhood café, with a menu section and simple online ordering call-to-action.</p>
+              <ul class="tech-tags">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://shivram-devloper.github.io/Mountain-Bean-Cafe/" class="btn btn-small btn-primary">Live Demo</a>
+                <a href="#" class="btn btn-small btn-ghost">View Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="demo-badge">Demo Project</span>
+            <div class="project-media">
+              <img src="images/saloon.jpeg" alt="Screenshot of a demo salon website homepage with a booking section">
+            </div>
+            <div class="project-body">
+              <h3>Salon Website</h3>
+              <p>A clean, elegant site for a hair and beauty salon, featuring a services list, pricing, and an appointment request form.</p>
+              <ul class="tech-tags">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://shivram-devloper.github.io/velora-studio/" class="btn btn-small btn-primary">Live Demo</a>
+                <a href="#" class="btn btn-small btn-ghost">View Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="demo-badge">Demo Project</span>
+            <div class="project-media">
+              <img src="images/services.jpeg" alt="Screenshot of a demo local repair service website homepage">
+            </div>
+            <div class="project-body">
+              <h3>Local Repair Service Website</h3>
+              <p>A straightforward, trust-focused site for a local repair shop, with a clear services breakdown and a request-a-quote form.</p>
+              <ul class="tech-tags">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project-actions">
+                <a href=" https://shivram-devloper.github.io/Fixora-Home-Services/" class="btn btn-small btn-primary">Live Demo</a>
+                <a href="#" class="btn btn-small btn-ghost">View Code</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ================= SKILLS =================
+    <section class="skills" id="skills">
+      <div class="container">
+        <p class="eyebrow">Skills</p>
+        <h2 class="section-title">Tools I build with</h2>
+
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-top">
+              <span class="skill-name">HTML</span>
+              <span class="skill-level">Proficient</span>
+            </div>
+            <div class="skill-bar"><span style="width: 90%;"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <span class="skill-name">CSS</span>
+              <span class="skill-level">Proficient</span>
+            </div>
+            <div class="skill-bar"><span style="width: 85%;"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-level">Comfortable</span>
+            </div>
+            <div class="skill-bar"><span style="width: 70%;"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <span class="skill-name">Git</span>
+              <span class="skill-level">Comfortable</span>
+            </div>
+            <div class="skill-bar"><span style="width: 75%;"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <span class="skill-name">GitHub</span>
+              <span class="skill-level">Comfortable</span>
+            </div>
+            <div class="skill-bar"><span style="width: 75%;"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <span class="skill-name">Responsive Web Design</span>
+              <span class="skill-level">Proficient</span>
+            </div>
+            <div class="skill-bar"><span style="width: 88%;"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+ -->
+    <!-- ================= WORK PROCESS =================
+    <section class="process" id="process">
+      <div class="container">
+        <p class="eyebrow">Process</p>
+        <h2 class="section-title">How a project comes together</h2>
+
+        <ol class="process-list">
+          <li class="process-step">
+            <span class="process-num">01</span>
+            <div>
+              <h3>Discuss</h3>
+              <p>Understand the business and what the website needs to do.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-num">02</span>
+            <div>
+              <h3>Plan</h3>
+              <p>Plan the website structure, pages, and content.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-num">03</span>
+            <div>
+              <h3>Build</h3>
+              <p>Develop the website with clean, responsive code.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-num">04</span>
+            <div>
+              <h3>Review</h3>
+              <p>Share a preview and collect feedback before launch.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-num">05</span>
+            <div>
+              <h3>Launch</h3>
+              <p>Deploy the finished website and hand it over.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section> -->
+
+    <!-- ================= CONTACT =================
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title">Have a project in mind?</h2>
+          <p>
+            Tell me a bit about your business and what you're looking for.
+            I read every message and usually reply within a couple of days.
+          </p>
+          <a href="mailto:shivram.dev.in@gmail.com" class="contact-email">shivram.dev.in@gmail.com</a>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <span class="field-error" id="nameError"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <span class="field-error" id="emailError"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <span class="field-error" id="messageError"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section> -->
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">ShivRam<span class="nav-logo-dot">.</span></a>
+        <p>Web developer building modern websites for small and local businesses.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="footer-meta">
+        <a href="https://github.com/shivram-devloper" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:shivram.dev.in@gmail.com">shivram.dev.in@gmail.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="currentYear"></span> ShivRam. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1238 @@
+/* =========================================================
+   ShivRam — PORTFOLIO STYLESHEET
+   Table of contents:
+   1. Custom properties (design tokens)
+   2. Reset & base styles
+   3. Layout helpers
+   4. Buttons
+   5. Navigation
+   6. Hero
+   7. About
+   8. Services
+   9. Projects
+   10. Skills
+   11. Process
+   12. Contact
+   13. Footer
+   14. Responsive breakpoints
+   ========================================================= */
+
+/* ---------- 1. Custom properties ---------- */
+:root {
+  /* Color */
+  --color-bg: #F3F4EF;
+  --color-surface: #FFFFFF;
+  --color-ink: #1B2130;
+  --color-ink-soft: #4B5266;
+  --color-border: #DEDCD1;
+  --color-accent: #C9762C;
+  --color-accent-dark: #A8611F;
+  --color-teal: #275C58;
+  --color-teal-soft: #E4EDEB;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* Layout */
+  --container-width: 1160px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-soft: 0 1px 2px rgba(27, 33, 48, 0.06), 0 8px 24px -12px rgba(27, 33, 48, 0.12);
+
+  /* Motion */
+  --transition-fast: 160ms ease;
+  --transition-med: 260ms ease;
+}
+
+/* ---------- 2. Reset & base styles ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--color-ink-soft);
+  max-width: 62ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- 3. Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+section {
+  padding-block: 96px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--color-teal);
+  margin: 0 0 0.75em;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  max-width: 20ch;
+}
+
+.section-lead {
+  max-width: 60ch;
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.85em 1.6em;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-ink);
+}
+
+.btn-small {
+  padding: 0.55em 1.1em;
+  font-size: 0.85rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ---------- 5. Navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(243, 244, 239, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.nav-logo-dot {
+  color: var(--color-accent);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  position: relative;
+  padding-block: 4px;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active-link {
+  color: var(--color-ink);
+}
+
+.nav-link.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+.nav-cta {
+  background-color: var(--color-ink);
+  color: var(--color-bg) !important;
+  padding: 0.6em 1.3em;
+  border-radius: 999px;
+}
+
+.nav-cta:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.nav-cta.active-link::after {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-ink);
+  border-radius: 2px;
+  transition: transform var(--transition-med), opacity var(--transition-med);
+  margin-inline: auto;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- 6. Hero ---------- */
+.hero {
+  position: relative;
+  padding-block: 88px 64px;
+  overflow: hidden;
+}
+
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(27, 33, 48, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(27, 33, 48, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem);
+  max-width: 14ch;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  max-width: 46ch;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Hero visual: faux browser mockup, built from CSS only */
+.browser-mock {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background-color: #EEEBE1;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.browser-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #D3CFC2;
+}
+
+.browser-url {
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+  background-color: var(--color-surface);
+  border-radius: 6px;
+  padding: 4px 10px;
+  flex: 1;
+}
+
+.browser-body {
+  padding: 22px;
+}
+
+.skeleton-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.skeleton-chip {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background-color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.skeleton-line {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #E7E4D8;
+}
+
+.skeleton-line--s { width: 44px; }
+.skeleton-line--md { width: 70%; margin-block: 10px; }
+.skeleton-line--lg { width: 85%; height: 16px; margin-bottom: 10px; }
+
+.skeleton-hero {
+  margin-bottom: 24px;
+}
+
+.skeleton-btn {
+  display: inline-block;
+  width: 96px;
+  height: 26px;
+  border-radius: 999px;
+  background-color: var(--color-teal);
+  margin-top: 6px;
+}
+
+.skeleton-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.skeleton-card {
+  height: 64px;
+  border-radius: 8px;
+  background-color: var(--color-teal-soft);
+}
+
+/* ---------- 7. About ---------- */
+.about-inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.avatar-frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-teal);
+}
+
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--color-teal-soft);
+  background: linear-gradient(155deg, var(--color-teal), #16332F);
+}
+
+.avatar-fallback img {
+  display: none;
+}
+
+.avatar-fallback .avatar-placeholder {
+  display: flex;
+}
+
+.about-copy p {
+  font-size: 1.02rem;
+}
+
+/* ---------- 8. Services ---------- */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding-block: 28px;
+  border-bottom: 1px solid var(--color-border);
+  align-items: flex-start;
+}
+
+.service-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.35em;
+}
+
+.service-text p {
+  margin: 0;
+}
+
+/* ---------- 9. Projects ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.project-card {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.demo-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.project-media {
+  aspect-ratio: 16 / 10;
+  background-color: var(--color-teal-soft);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-body h3 {
+  font-size: 1.15rem;
+}
+
+.project-body p {
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tech-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-teal);
+  background-color: var(--color-teal-soft);
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------- 10. Skills ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 48px;
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  font-weight: 600;
+}
+
+.skill-level {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+}
+
+.skill-bar {
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--color-border);
+  overflow: hidden;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 999px;
+}
+
+/* ---------- 11. Process ---------- */
+.process {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.process-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  padding-block: 22px;
+  border-top: 1px solid var(--color-border);
+}
+
+.process-step:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.process-num {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-accent);
+}
+
+.process-step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3em;
+}
+
+.process-step p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- 12. Contact ---------- */
+.contact-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--color-teal);
+  border-bottom: 1px solid var(--color-teal);
+}
+
+.contact-form {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75em 0.9em;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.form-field.has-error input,
+.form-field.has-error textarea {
+  border-color: #C24C3F;
+}
+
+.field-error {
+  display: block;
+  min-height: 1.2em;
+  font-size: 0.8rem;
+  color: #C24C3F;
+  margin-top: 4px;
+}
+
+.form-status {
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.form-status.success {
+  color: var(--color-teal);
+}
+
+/* ---------- 13. Footer ---------- */
+.site-footer {
+  background-color: var(--color-ink);
+  color: #C9CCD6;
+  padding-top: 64px;
+}
+
+.site-footer .nav-logo {
+  color: #F3F4EF;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-brand p {
+  color: #9BA0B0;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  max-width: 32ch;
+}
+
+.footer-nav,
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.footer-nav a,
+.footer-meta a {
+  color: #C9CCD6;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-meta a:hover {
+  color: var(--color-accent);
+}
+
+.footer-bottom {
+  padding-block: 20px;
+  font-size: 0.8rem;
+  color: #7B8092;
+}
+
+/* ---------- 14. Responsive breakpoints ---------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+  section {
+    padding-block: 72px;
+  }
+
+  .hero-inner,
+  .about-inner,
+  .contact-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .about-image {
+    max-width: 280px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile nav + stacked layouts */
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: 8px 24px 20px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-med), opacity var(--transition-med);
+  }
+
+  .nav-menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    padding-block: 14px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-link.active-link::after {
+    display: none;
+  }
+
+  .nav-cta {
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-row {
+    grid-template-columns: 44px 1fr;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 18px;
+  }
+
+  section {
+    padding-block: 56px;
+  }
+
+  .hero {
+    padding-block: 48px 40px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-form {
+    padding: 22px;
+  }
+}
+
+/* =========================================================
+   CUSTOM SECTION BACKGROUNDS
+   ========================================================= */
+
+/* Shared setup */
+.hero,
+.about,
+.services,
+.process,
+.contact {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Keep section content above the background */
+.about > .container,
+.services > .container,
+.process > .container,
+.contact > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(243, 244, 239, 0.35),
+      rgba(243, 244, 239, 0.35)
+    ),
+    url("images/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------- About ---------- */
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(243, 244, 239, 0.40),
+      rgba(243, 244, 239, 0.40)
+    ),
+    url("images/about-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Services ---------- */
+
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(244, 239, 239, 0.1),
+      rgba(239, 243, 244, 0.1)
+    ),
+    url("images/services-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Process ---------- */
+
+.process::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.35)
+    ),
+    url("images/process-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Contact ---------- */
+
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(243, 244, 239, 0.30),
+      rgba(243, 244, 239, 0.20)
+    ),
+    url("images/contact-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Make the backgrounds feel more polished ---------- */
+
+.hero,
+.about,
+.services,
+.process,
+.contact {
+  background-attachment: scroll;
+}
+
+@media (min-width: 900px) {
+  .hero,
+  .about,
+  .services,
+  .process,
+  .contact {
+    background-attachment: scroll;
+  }
+}
+
+/* =========================================================
+   CUSTOM TEXT COLORS — SECTION BY SECTION
+   Add this at the VERY BOTTOM of style.css
+   ========================================================= */
+
+
+/* ---------- 1. HERO ---------- */
+
+.hero h1,
+.hero h2,
+.hero h3 {
+  color: #FFFFFF;
+}
+
+.hero p {
+  color: #E5E7EB;
+}
+
+.hero .eyebrow,
+.hero .label {
+  color: #E5E7EB;
+}
+
+.hero a {
+  color: #FFFFFF;
+}
+
+
+/* ---------- 2. ABOUT ---------- */
+
+.about h1,
+.about h2,
+.about h3 {
+  color: #1B2130;
+}
+
+.about p {
+  color: #4B5266;
+}
+
+.about .eyebrow,
+.about .label {
+  color: #275C58;
+}
+
+
+/* ---------- 3. SERVICES ---------- */
+
+.services h1,
+.services h2,
+.services h3 {
+  color: #1B2130;
+}
+
+.services p {
+  color: #4B5266;
+}
+
+.services .eyebrow,
+.services .label {
+  color: #275C58;
+}
+
+
+/* ---------- 4. PROJECTS ---------- */
+
+.projects h1,
+.projects h2,
+.projects h3 {
+  color: #1B2130;
+}
+
+.projects p {
+  color: #4B5266;
+}
+
+.projects .eyebrow,
+.projects .label {
+  color: #275C58;
+}
+
+
+/* ---------- 5. PROCESS ---------- */
+
+.process h1,
+.process h2,
+.process h3 {
+  color: #1B2130;
+}
+
+.process p {
+  color: #4B5266;
+}
+
+.process .eyebrow,
+.process .label {
+  color: #275C58;
+}
+
+
+/* ---------- 6. CONTACT ---------- */
+
+.contact h1,
+.contact h2,
+.contact h3 {
+  color: #FFFFFF;
+}
+
+.contact p {
+  color: #E5E7EB;
+}
+
+.contact .eyebrow,
+.contact .label {
+  color: #E5E7EB;
+}
+
+.contact a {
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   ACCENT COLORS
+   ========================================================= */
+
+/* Warm amber — use for important highlights */
+.hero .accent,
+.about .accent,
+.services .accent,
+.projects .accent,
+.process .accent {
+  color: #C9762C;
+}
+
+
+/* Teal — use for labels, small highlights and links */
+.about a,
+.services a,
+.projects a,
+.process a {
+  color: #275C58;
+}
+
+
+/* =========================================================
+   OPTIONAL: CONTACT FORM TEXT
+   ========================================================= */
+
+.contact input,
+.contact textarea,
+.contact select {
+  color: #1B2130;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: #6B7280;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   Keep buttons readable
+   ========================================================= */
+
+.hero .btn,
+.contact .btn {
+  color: #FFFFFF;
+}
